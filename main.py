@@ -103,6 +103,23 @@ for epoch in range(epochs):
 
 print("✅ Обучение завершено!")
 
+
+model.class_to_idx = train_dataset.class_to_idx
+
+# 2. Создаем словарь с метаданными и состоянием модели
+checkpoint = {
+    'input_size': 3 * 224 * 224, # (3 канала * 224 * 224)
+    'output_size': num_classes,
+    'class_to_idx': model.class_to_idx,
+    'model_state_dict': model.state_dict(),
+    'classifier': model.fc
+}
+
+# 3. Сохраняем контрольную точку
+torch.save(checkpoint, 'meat_classifier.pth')
+
+print("\n✅ Модель успешно сохранена в файл: meat_classifier.pth")
+
 # --------------------------------------------------------------------------------
 # 6. Информация о данных
 print(f"Классы: {train_dataset.classes}")
