@@ -23,18 +23,6 @@ python check_setup.py
 Bash
 streamlit run app.py
 Приложение откроется в браузере по адресу http://localhost:8501
-
-Структура проекта
-neuro/
-├── app.py                # Основное приложение Streamlit
-├── main.py               # Скрипт для обучения модели
-├── meat_classifier.pth   # Обученная модель (необходима для работы)
-├── requirements.txt      # Зависимости Python
-├── dataset/              # Датасет для обучения (не требуется для инференса)
-│   ├── train/
-│   └── validation/
-└── results/              # Директория для сохранения результатов
-    └── predictions.json  # История предсказаний
 Использование
 Запустите приложение командой streamlit run app.py.
 
